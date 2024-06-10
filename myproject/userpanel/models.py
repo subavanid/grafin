@@ -37,15 +37,15 @@ class HomeAppliance(models.Model):
     # def __str__(self):
     #     return f"{self.name} in {self.room.room}"
 
-class HomeApplianceStatus(models.Model):
-    name = models.CharField(max_length=250)
-    appliance = models.CharField(max_length=24)
-    timestamp = models.DateTimeField(auto_now_add=True)
-    status = models.BooleanField(default=False)
-    sensor_reading = models.DecimalField(max_digits=5, decimal_places=2)
+# class HomeApplianceStatus(models.Model):
+#     name = models.CharField(max_length=250)
+#     appliance = models.CharField(max_length=24)
+#     timestamp = models.DateTimeField(auto_now_add=True)
+#     status = models.BooleanField(default=False)
+#     sensor_reading = models.DecimalField(max_digits=5, decimal_places=2)
 
-    def __str__(self):
-        return f"{self.appliance} - {self.name} - {self.status} at {self.timestamp}"
+#     def __str__(self):
+#         return f"{self.appliance} - {self.name} - {self.status} at {self.timestamp}"
     
 
 
@@ -76,14 +76,21 @@ class OfficeAppliance(models.Model):
         return f"{self.name} in {self.officeroom.officeroom}"
 
 
-class OfficeApplianceStatus(models.Model):
-    appliance_id = models.CharField(max_length=24)
+class HomeApplianceStatus(models.Model):
+    appliance = models.ForeignKey(HomeAppliance, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
     status = models.BooleanField(default=False)
-    sensor_reading = models.DecimalField(max_digits=5, decimal_places=2)
+    # added_by = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
-        return f"{self.appliance_id} - {self.status} at {self.timestamp}"
+        return f"{self.appliance.name} - {self.status} at {self.timestamp}"
 
+class OfficeApplianceStatus(models.Model):
+    appliance = models.ForeignKey(OfficeAppliance, on_delete=models.CASCADE)  # Corrected ForeignKey reference
+    timestamp = models.DateTimeField(auto_now_add=True)
+    status = models.BooleanField(default=False)
+    # sensor_reading = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    # added_by = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
-
+    def __str__(self):
+        return f"{self.appliance.name} - {self.status} at {self.timestamp}"

@@ -10,7 +10,7 @@ SECRET_KEY = 'ycew5h*z#n2sr4i7i+0js)ych4)n)sw^kk3qiek)4^x@etw09l'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','192.168.1.13','192.168.1.13:8000']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','192.168.1.15','192.168.1.15:8000']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -118,7 +118,7 @@ CORS_ALLOW_HEADERS = ['accept', 'accept-encoding', 'authorization', 'content-typ
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
     ],
 }
+

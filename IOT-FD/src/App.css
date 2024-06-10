@@ -1,0 +1,71 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  transition: left 0.3s ease;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.css-51x8c3-MuiGrid-root{
+  -webkit-justify-content: flex-start !important; 
+   justify-content: flex-start !important;
+}
+
+.toggle-button {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+}
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
+background-color: black;
+}
+
+.css-mfh5ey-MuiTypography-root {
+  /* margin: 0; */
+  color: white;
+  border-radius: 3px !important;
+  padding: 5px;
+  background-color: #387e8a !important;
+  margin-left: 90px !important;
+  margin-top: 50px !important;
+  cursor: pointer;
+}
+
+.css-1f2xuhi-MuiDrawer-docked .MuiDrawer-paper {
+  width: 240px;
+  box-sizing: border-box;
+  background-color: black !important
+  ;
+}
+
+.css-156cg03-MuiDrawer-docked .MuiDrawer-paper {
+  width: 240px;
+  box-sizing: border-box;
+  background-color: black !important;
+}
+.css-he3yrc-MuiPaper-root-MuiCard-root {
+    background-color: #fff;
+    color: rgba(0, 0, 0, 0.87);
+    -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 4px;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    min-width: 250px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}

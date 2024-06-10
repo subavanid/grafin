@@ -30,3 +30,18 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['username','email', 'password']
+
+
+
+class HomeApplianceStatusSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HomeApplianceStatus
+        fields = '__all__'
+        read_only_fields = ['timestamp', 'added_by']
+
+
+class OfficeApplianceStatusSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HomeApplianceStatus
+        fields = '__all__'
+        read_only_fields = ['timestamp', 'added_by']
